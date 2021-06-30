@@ -13,7 +13,7 @@ class Node
             next=NULL;
         }
 };
-class Solution{
+class SLL{
     public:
           Node* removeDuplicates(Node *head)
           {
@@ -31,47 +31,45 @@ class Solution{
             return head;
           }
 
-          Node* insert(Node *head,int data)
+          Node* insert(Node *head, int data)
           {
-               Node* p=new Node(data);
-               if(head==NULL){
-                   head=p;
-               }
-               else if(head->next==NULL){
-                   head->next=p;
+               Node* p = new Node(data);
+               if(head == NULL){
+                   head = p;
                }
                else{
-                   Node *start=head;
-                   while(start->next!=NULL){
-                       start=start->next;
+                   Node* start = head;
+                   while(start -> next != NULL){
+                       start = start -> next;
                    }
-                   start->next=p;   
+                   start -> next = p;   
 
                }
                return head;           
           }
+	
           void display(Node *head)
           {
-                  Node *start=head;
+                  Node* start = head;
                   while(start)
                   {
-                  	cout<<start->data<<" ";
-                        start=start->next;
+                  	cout << start -> data << " ";
+                        start = start -> next;
                   }
            }
 };
 			
 int main()
 {
-	Node* head=NULL;
-  	Solution mylist;
-	int T,data;
-	cin>>T;
+	Node* head = NULL;
+  	SLL mylist;
+	int T, data;
+	cin >> T;
 	while(T--)
 	{
-        	cin>>data;
-	        head=mylist.insert(head,data);
+        	cin >> data;
+	        head = mylist.insert(head, data);
 	}	
-        head=mylist.removeDuplicates(head);
+        head = mylist.removeDuplicates(head);
 	mylist.display(head);	
 }
