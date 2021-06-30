@@ -1,23 +1,20 @@
-#include <cstddef>
-#include <cmath>
-#include <cstdio>
-#include <vector>
 #include <iostream>
-#include <algorithm>
+
 using namespace std;	
+
 class Node
 {
     public:
         int data;
         Node *next;
-        Node(int d){
+        Node(int d)
+	{
             data=d;
             next=NULL;
         }
 };
 class Solution{
     public:
-
           Node* removeDuplicates(Node *head)
           {
             Node* curr = head;
@@ -38,12 +35,10 @@ class Solution{
           {
                Node* p=new Node(data);
                if(head==NULL){
-                   head=p;  
-
+                   head=p;
                }
                else if(head->next==NULL){
                    head->next=p;
-
                }
                else{
                    Node *start=head;
@@ -53,9 +48,7 @@ class Solution{
                    start->next=p;   
 
                }
-                    return head;
-                
-            
+               return head;           
           }
           void display(Node *head)
           {
